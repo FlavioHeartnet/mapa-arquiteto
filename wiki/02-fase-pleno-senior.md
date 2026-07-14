@@ -202,14 +202,36 @@ Performance vem de medir antes de otimizar e de aplicar padrões conhecidos: cac
 
 > Conhecer os serviços equivalentes de AWS, Azure e GCP.
 
-Nuvem é onde os sistemas modernos rodam. Você não precisa dominar tudo, mas sim reconhecer o mapa: compute, storage, funções serverless, filas, bancos gerenciados e balanceadores — e como AWS/Azure/GCP nomeiam cada um. A certificação AWS Cloud Practitioner é um bom ponto de partida.
+Nuvem é onde os sistemas modernos rodam. Você não precisa dominar tudo, mas sim reconhecer o mapa: compute, storage, funções serverless, filas, bancos gerenciados e balanceadores — e como cada provedor nomeia o mesmo serviço. A tabela abaixo compara os 24 tipos de serviço mais comuns entre AWS, Azure e Google Cloud. A certificação AWS Cloud Practitioner é um bom ponto de partida.
 
-- **Compute** — Máquinas virtuais/contêineres (EC2, VM, Compute Engine).
-- **Storage** — Objeto/bloco/arquivo (S3, Blob, Cloud Storage).
-- **Functions (Serverless)** — Código sob demanda (Lambda, Azure Functions, Cloud Functions).
-- **Load Balancing** — Distribui tráfego entre instâncias (ELB, Azure LB).
-- **Filas / Mensageria** — Comunicação assíncrona (SQS, Service Bus, Pub/Sub).
-- **Bancos gerenciados** — RDS/DynamoDB, Cosmos DB, Cloud SQL/Firestore.
+| Tipo de Serviço | AWS | Azure | Google Cloud |
+|---|---|---|---|
+| Virtual Machines | Elastic Compute Cloud (EC2) | Virtual Machine | Compute Engine |
+| Kubernetes Platform | Elastic Kubernetes Service (EKS) | Azure Kubernetes Service (AKS) | Google Kubernetes Engine (GKE) |
+| Functions as a Service | Lambda | Azure Functions | Cloud Functions |
+| Object Storage | Simple Storage Service (S3) | Blob Storage | Cloud Storage |
+| Block Storage | Elastic Block Store (EBS) | Managed Disk | Persistent Disk |
+| File Storage | Elastic File System (EFS) | File Storage | File Store |
+| Networking | Virtual Private Cloud (VPC) | Virtual Network (VNet) | Virtual Private Cloud (VPC) |
+| Domain Name System | Route 53 | Azure DNS | Cloud DNS |
+| Load Balancing | Elastic Load Balancing (ELB) | Load Balancer | Cloud Load Balancing |
+| Cloud Firewall | Web Application Firewall (WAF) | Web Application Firewall (WAF) | Cloud Armor |
+| RDBMS | RDS | SQL Database | Cloud SQL |
+| NoSQL | DynamoDB | Cosmos DB | Firebase Realtime Database |
+| Data Warehouse | Redshift | Synapse Analytics | BigQuery |
+| BigData | Elastic MapReduce (EMR) | HDInsight | Dataproc |
+| Streaming Service | Kinesis | Streaming Analytics | Dataflow |
+| AutoML | SageMaker | Machine Learning | Vertex AI |
+| Data Catalog | Glue | Data Factory | Data Fusion |
+| Event Driven System | EventBridge | Event Grid | Eventarc |
+| Message Queue | Simple Queuing Service (SQS) | Storage Queues | Pub/Sub |
+| Notification | Simple Notification Service (SNS) | Service Bus | Firebase Cloud Messaging |
+| Monitoring | CloudWatch | Monitor | Cloud Monitoring |
+| Infrastructure as Code | CloudFormation | Resource Manager | Deployment Manager |
+| Identity Management | IAM | Active Directory | Cloud Identity |
+| Key Encryption | KMS | Key Vault | Cloud KMS |
+
+> 📷 Tabela original (imagem): [assets/cloud-services-aws-azure-gcp.png](assets/cloud-services-aws-azure-gcp.png)
 
 📎 **Aprofundamento:**
   - [AWS Certified Cloud Practitioner](https://aws.amazon.com/certification/certified-cloud-practitioner/)
