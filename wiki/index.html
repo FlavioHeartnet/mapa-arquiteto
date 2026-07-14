@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>O Mapa do Arquiteto — Wiki de Estudos</title>
 <style>
   :root{
@@ -36,7 +41,7 @@
     --shadow:0 1px 2px rgba(20,29,48,.06), 0 8px 24px rgba(20,29,48,.06);
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;overflow-x:clip}
   body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);
     line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
   a{color:inherit}
@@ -140,8 +145,8 @@
   .ov.open{opacity:1;visibility:visible}
   .drawer{position:fixed;top:0;right:0;bottom:0;z-index:81;width:min(600px,94vw);
     background:var(--bg);border-left:1px solid var(--ln);box-shadow:-20px 0 60px rgba(0,0,0,.25);
-    transform:translateX(100%);display:flex;flex-direction:column;will-change:transform}
-  .drawer.open{transform:translateX(0)}
+    transform:translateX(100%);display:none;flex-direction:column;will-change:transform}
+  .drawer.open{transform:translateX(0);display:flex}
   .drawer.wide{width:min(1120px,97vw)}
   .drawer-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
     padding:24px 26px 16px;border-bottom:1px solid var(--ln)}
@@ -222,15 +227,58 @@
   footer a{color:var(--gold);text-decoration:none}
 
   .reveal{opacity:0;transform:translateY(22px)}
-  @media (max-width:820px){
-    .shell{grid-template-columns:1fr;gap:8px}
-    nav.side{display:none}
+
+  /* ---------- tablet ---------- */
+  @media (max-width:900px){
+    :root{--maxw:100%}
+    .shell{grid-template-columns:1fr;gap:0;padding:20px 20px 100px}
+    /* side index becomes a horizontal sticky bar under the header */
+    nav.side{position:sticky;top:56px;z-index:40;align-self:stretch;height:auto;min-width:0;
+      margin:0 -20px 20px;background:color-mix(in srgb,var(--bg) 90%,transparent);
+      backdrop-filter:blur(8px);border-bottom:1px solid var(--ln)}
+    nav.side .navtitle{display:none}
+    nav.side ul{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;border-left:none;gap:4px;padding:10px 20px;
+      max-width:100%;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    nav.side ul::-webkit-scrollbar{display:none}
+    nav.side a{white-space:nowrap;border-left:none;border-bottom:2px solid transparent;
+      margin-left:0;padding:6px 10px}
+    nav.side a.active{border-left:none;border-bottom-color:var(--accent)}
+    section.block{scroll-margin-top:118px}
+    .hero{min-height:auto;padding:104px 20px 48px}
+    .res-grid{grid-template-columns:1fr}
+    .topics{grid-template-columns:1fr}
   }
+
+  /* ---------- phone ---------- */
+  @media (max-width:560px){
+    header.top{padding:12px 16px}
+    .brand{font-size:12px}
+    .wrap,.finish,footer{padding-left:16px;padding-right:16px}
+    .shell{padding:16px 16px 90px}
+    nav.side{margin:0 -16px 16px}
+    nav.side ul{padding:9px 16px}
+    .hero{padding:96px 16px 40px}
+    .eyebrow{font-size:10.5px;letter-spacing:.16em}
+    .hero p.lead{font-size:15px}
+    .phase-head h2{font-size:22px}
+    /* drawer full-screen on phones */
+    .drawer,.drawer.wide{width:100vw;border-left:none}
+    .drawer-top{padding:18px 18px 14px}
+    .drawer-top h3{font-size:19px}
+    .drawer-body{padding:18px 18px 40px}
+    /* cloud table: readable via horizontal scroll instead of squished columns */
+    .dtable{table-layout:auto;min-width:640px}
+    .dtable col.c-type,.dtable col.c-prov{width:auto}
+    .dtable th,.dtable td{white-space:nowrap}
+  }
+
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .reveal{opacity:1;transform:none}
   }
 </style>
+</head>
+<body>
 
 <div id="track"></div>
 <header class="top">
@@ -507,3 +555,5 @@
   }
 })();
 </script>
+</body>
+</html>
